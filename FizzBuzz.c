@@ -1,22 +1,21 @@
-include<stdio.h>
+#include<stdio.h>
 int main(void){
-    int a;
-    int b;
-    int c;
+    int first; //入力する1つ目の割る数
+    int second; //入力する2つ目の割る数
+    int range = 30; //走査する数の範囲
 
     /*** 数値を入力する ***/
-    scanf("%d",&a);
-    scanf("%d",&b);
+    scanf("%d",&first);
+    scanf("%d",&second);
     
-    for(int i=1; i<=30; i++){
-	c = i;
-    	if(c%a != 0 && c%b != 0){
-    		printf("%d\n",c);
-    	}else if(c%a == 0 && c%b != 0){
+    for(int i=1; i<=range; i++){
+    	if(i%first != 0 && i%second != 0){
+    		printf("%d\n",i);
+    	}else if(i%first == 0 && i%second != 0){
     		printf("Fizz\n");
-    	}else if(c%b ==0 && c %a != 0){
+    	}else if(i%first == 0 && i%second != 0){
     		printf("Buzz\n");
-    	}else if(c % a ==0 && c % b == 0){
+    	}else if(i%first == 0 && i%second == 0){
         	printf("FizzBuzz\n");
         }
     }
